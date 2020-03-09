@@ -1,0 +1,6 @@
+<h1>論文一覧</h1>
+<ul style="list-style: none; padding-left: 0;">
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, articles_path %></li>
+  <% end %>
+</ul>
