@@ -1,4 +1,14 @@
 <h1>新規論文投稿</h1>
+
+<% if @article.errors.any? %>
+  <p><b><%= @article.errors.count %>件のエラーがあります</b></p>
+  <ul>
+  <% @article.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @article, local: true do |form| %>
 
   <p>論文タイトル<br>
@@ -13,6 +23,5 @@
   <div class="actions">
   <%= form.submit "投稿", class: 'sign-btn' %>
   </div>
-
 
   <% end %>
